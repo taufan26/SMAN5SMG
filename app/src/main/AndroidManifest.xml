@@ -9,12 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SMAN5SMG">
-<<<<<<< HEAD
         <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".MainActivity">
-=======
+        <activity android:name=".MainActivity"/>
         <activity android:name=".LoginActivity">
->>>>>>> 05e78b33c8d2fef79244e1d7872f765f63c2ca23
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
