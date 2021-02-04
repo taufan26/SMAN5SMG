@@ -18,10 +18,25 @@
         android:contentDescription=""
         tools:ignore="ContentDescription" />
 
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Aplikasi absensi"
+      android:layout_gravity="center"
+      android:textSize="30dp"
+      android:textStyle="bold"
+      android:textAllCaps="true"
+      android:textColor="#ffffff" />
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:text="Sman 5 semarang"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="#ffffff" />
 
 
 </LinearLayout>
