@@ -10,7 +10,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoregis"
         android:layout_width="200dp"
         android:layout_height="180dp"
         android:layout_marginTop="40dp"
@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:textSize="16dp"
         android:layout_marginBottom="35dp"
-        android:layout_above="@+id/Regispass"
+        android:layout_above="@+id/Regisemail"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -37,7 +37,7 @@
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
+        android:drawableLeft="@drawable/ic_action_username"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -47,14 +47,14 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/Regispass"
+        android:id="@+id/Regisemail"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_pass"
+        android:drawableLeft="@drawable/ic_action_email"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
         android:textSize="16dp"
         android:layout_marginBottom="35dp"
         android:layout_above="@+id/Regispasslagi"
@@ -67,10 +67,19 @@
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_pass"
         android:ems="10"
-        android:hint="Password Lagi"
+        android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="130dp"
-        android:layout_alignBottom="@+id/cardView"
+        android:layout_alignBottom="@+id/registercard"
+        android:layout_alignLeft="@+id/RegisFullname"
+        android:layout_alignStart="@+id/RegisFullname" />
+
+    <ProgressBar
+        android:id="@+id/RegisProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/Regisemail"
         android:layout_alignLeft="@+id/RegisFullname"
         android:layout_alignStart="@+id/RegisFullname" />
 
@@ -81,7 +90,7 @@
         app:cardBackgroundColor="@color/teal_700"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
-        android:id="@+id/cardView"
+        android:id="@+id/registercard"
         android:layout_marginBottom="31dp"
         android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true">
@@ -91,7 +100,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -115,8 +124,8 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_alignLeft="@+id/logoregis"
+        android:layout_alignStart="@+id/logoregis"
         android:id="@+id/linearLayout">
 
     </LinearLayout>
