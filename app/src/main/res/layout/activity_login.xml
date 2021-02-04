@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/loginusername"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
@@ -30,11 +30,11 @@
         android:inputType="textPersonName"
         android:textSize="16dp"
         android:layout_marginBottom="35dp"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/loginpass"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/loginpass"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
@@ -43,9 +43,18 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="130dp"
-        android:layout_alignBottom="@+id/cardView"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignBottom="@+id/logress"
+        android:layout_alignLeft="@+id/loginusername"
+        android:layout_alignStart="@+id/loginusername" />
+
+    <ProgressBar
+        android:id="@+id/loginProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/loginpass"
+        android:layout_alignLeft="@+id/loginpass"
+        android:layout_alignStart="@+id/loginpass" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
@@ -53,9 +62,9 @@
         app:cardBackgroundColor="@color/teal_700"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
-        android:id="@+id/cardView"
+        android:id="@+id/login_btn"
         android:layout_marginBottom="31dp"
-        android:layout_above="@+id/textView2"
+        android:layout_above="@+id/logress"
         android:layout_centerHorizontal="true">
 
         <RelativeLayout
@@ -74,7 +83,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/logress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Belum Punya Akun? Register Disini"
