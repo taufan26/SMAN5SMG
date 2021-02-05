@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         editTextpass = findViewById(R.id.loginpass);
         cardViewlogin = findViewById(R.id.login_btn);
         progressBar = findViewById(R.id.loginProgress);
-        regis_msg = findViewById(R.id.logress);
 
         cardViewlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,14 +75,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-       regis_msg.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent regis = new Intent(v.getContext(), RegisterActivity.class);
-               startActivity(regis);
-           }
-       });
-}
-
+    }
 }
