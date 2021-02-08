@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="sky">#00F2FF</color>
+    <color name="backgroundbaru">#1666e1</color>
     <color name="bluefb">#4267B2</color>
 </resources>
