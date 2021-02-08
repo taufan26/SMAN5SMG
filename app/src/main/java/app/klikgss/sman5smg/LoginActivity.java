@@ -18,8 +18,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class LoginActivity extends AppCompatActivity {
 
     EditText  editTextusername, editTextpass;
-    CardView cardViewlogin;
-    TextView regis_msg;
+    TextView cardViewlogin;
     ProgressBar progressBar;
 
     @Override
