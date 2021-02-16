@@ -48,9 +48,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading . . .");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        AlertDialog dialog = builder.create();
-        dialog.show();
         btnforgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

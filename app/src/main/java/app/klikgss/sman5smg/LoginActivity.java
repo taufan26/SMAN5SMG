@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +21,11 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private CheckBox ShowPass;
     EditText  editTextusername, editTextpass;
     TextView cardViewlogin, textViewlupapassword;
     ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,20 @@ public class LoginActivity extends AppCompatActivity {
         cardViewlogin = findViewById(R.id.login_btn);
         textViewlupapassword = findViewById(R.id.loginforget);
         progressBar = findViewById(R.id.loginProgress);
+        ShowPass = findViewById(R.id.showPass);
+
+        ShowPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ShowPass.isChecked()){
+                    //Saat Checkbox dalam keadaan Checked, maka password akan di tampilkan
+                    editTextpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    //Jika tidak, maka password akan di sembuyikan
+                    editTextpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
 
         cardViewlogin.setOnClickListener(new View.OnClickListener() {
             @Override
