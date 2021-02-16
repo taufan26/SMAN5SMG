@@ -22,10 +22,33 @@
             android:textColor="@color/white"/>
 
 
+        <TextView
+            android:id="@+id/text_view_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:fontFamily="@font/font1"
+            android:gravity="center"
+            android:text="tanggal"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/text_view_jam"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="91dp"-->
+<!--            android:fontFamily="@font/font1"-->
+<!--            android:gravity="center"-->
+<!--            android:text="jam"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15sp" />-->
+
 
         <GridLayout
-            android:layout_marginTop="90dp"
-            android:id="@+id/GL0"
+            android:layout_marginTop="100dp"
+            android:id="@+id/GLIdentitas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alignmentMode="alignMargins"
@@ -96,7 +119,7 @@
         </GridLayout>
 
         <GridLayout
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="325dp"
             android:id="@+id/GL1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

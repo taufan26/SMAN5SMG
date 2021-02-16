@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +19,11 @@ import androidx.cardview.widget.CardView;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private CheckBox ShowPass;
     EditText  editTextusername, editTextpass;
     TextView cardViewlogin;
     ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,20 @@ public class LoginActivity extends AppCompatActivity {
         editTextpass = findViewById(R.id.loginpass);
         cardViewlogin = findViewById(R.id.login_btn);
         progressBar = findViewById(R.id.loginProgress);
+        ShowPass = findViewById(R.id.showPass);
+
+        ShowPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ShowPass.isChecked()){
+                    //Saat Checkbox dalam keadaan Checked, maka password akan di tampilkan
+                    editTextpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    //Jika tidak, maka password akan di sembuyikan
+                    editTextpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
 
         cardViewlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                             String[] data = new String[2];
                             data[0] = username;
                             data[1] = password;
-                            PutData putData = new PutData("http://192.168.18.130/LoginRegister/Login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.18.154/APIsman5smg/LoginRegister/Login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
