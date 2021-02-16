@@ -13,12 +13,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText  editTextusername, editTextpass;
-    TextView cardViewlogin;
+    TextView cardViewlogin, textViewlupapassword;
     ProgressBar progressBar;
 
     @Override
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextusername = findViewById(R.id.loginusername);
         editTextpass = findViewById(R.id.loginpass);
         cardViewlogin = findViewById(R.id.login_btn);
+        textViewlupapassword = findViewById(R.id.loginforget);
         progressBar = findViewById(R.id.loginProgress);
 
         cardViewlogin.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                             String[] data = new String[2];
                             data[0] = username;
                             data[1] = password;
-                            PutData putData = new PutData("http://192.168.18.130/LoginRegister/Login.php", "POST", field, data);
+                            PutData putData = new PutData(Urls.Login_URL, "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -72,6 +75,16 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(),"Semua Field Harus Di Isi", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+        textViewlupapassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
