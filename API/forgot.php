@@ -24,7 +24,8 @@ if (mysqli_num_rows($query) === 1) {
 	$mail->addReplyTo('gssshop07@gmail.com', 'GSS shop');
 
 	$mail->Subject = 'Lupa Password';
-	$mail->Body    = "Klik Link untuk merubah password:-http://localhost/API/passwordform.php?email='$email'";
+	$mail->Body    = "Klik Link untuk merubah password:
+	-http://www.sman5smg.com/$email";
 
 	if(!$mail->send()) {
 	    echo 'Message could not be sent.';
