@@ -96,7 +96,7 @@
                         android:layout_marginTop="40dp"
                         android:text="Nama :"/>
                     <TextView
-                        android:id="@+id/Kelas"
+                        android:id="@+id/UsernameSiswa"
                         android:fontFamily="@font/font1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -104,15 +104,15 @@
                         android:textSize="15sp"
                         android:layout_marginTop="20dp"
                         android:text="Kelas :"/>
-                    <TextView
-                        android:id="@+id/bingung"
-                        android:fontFamily="@font/font1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="15sp"
-                        android:layout_marginTop="20dp"
-                        android:text="Apaya?  :"/>
+<!--                    <TextView-->
+<!--                        android:id="@+id/bingung"-->
+<!--                        android:fontFamily="@font/font1"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textColor="#000"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:text="Apaya?  :"/>-->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -245,7 +245,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/logout"
+                android:id="@+id/menu3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -326,7 +326,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/pemesanan"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -335,7 +335,8 @@
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:clickable="true"
+                tools:ignore="DuplicateIds">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -347,7 +348,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/menucontoh"/>
+                        android:src="@drawable/logout"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -355,7 +356,7 @@
                         android:textColor="#000"
                         android:textSize="15sp"
                         android:layout_marginTop="5dp"
-                        android:text="menu2"/>
+                        android:text="Log Out"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -122,12 +122,12 @@
 
         </RelativeLayout>
 
-        <ProgressBar
-            android:id="@+id/loginProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
+<!--        <ProgressBar-->
+<!--            android:id="@+id/loginProgress"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_gravity="center"/>-->
 
         <CheckBox
             android:id="@+id/showPass"
@@ -180,6 +180,19 @@
                 android:text="LUPA PASSWORD?"
                 android:textColor="#1566e0"
                 android:textSize="10.5sp"/>
+
+
+            <TextView
+                android:id="@+id/register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Register Contoh"
+                android:textColor="#1566e0"
+                android:textSize="11sp"
+                />
         </LinearLayout>
 
     </LinearLayout>
