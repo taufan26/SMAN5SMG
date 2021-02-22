@@ -13,6 +13,7 @@ $database = "sman5semarang";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
+<<<<<<< HEAD
 
 $sql = "SELECT * FROM login";
 $result = mysqli_query ($conn, $sql);
@@ -37,3 +38,6 @@ echo "Connected successfully";
 ?>
 </body>
 </html>
+=======
+?>
+>>>>>>> 0106f409ce2254f2e06bb334fe9b9f2f5dfaa5ce
