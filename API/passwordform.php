@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'koneksi.php';
 $email = $_GET['key'];
 $sql = "SELECT * FROM login WHERE username ='$email'";
 $result = mysqli_query($conn,$sql);

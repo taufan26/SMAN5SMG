@@ -61,10 +61,16 @@ public class UpdatePasswordActivity extends AppCompatActivity {
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
-                                        Toast.makeText(UpdatePasswordActivity.this, response, Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                                        finish();
                                         progressDialog.dismiss();
+
+                                        if (response.equals("Password Berhasil di ganti!")){
+                                            Toast.makeText(UpdatePasswordActivity.this, response, Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                            finish();
+                                        }else {
+                                            Toast.makeText(UpdatePasswordActivity.this, response, Toast.LENGTH_SHORT).show();
+                                        }
+
                                     }
                                 }, new Response.ErrorListener() {
                             @Override
