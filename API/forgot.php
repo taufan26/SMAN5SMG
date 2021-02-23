@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'koneksi.php';
 require 'PHPMailer/PHPMailerAutoload.php';
 require 'PHPMailer/class.phpmailer.php';
 require 'PHPMailer/class.smtp.php';

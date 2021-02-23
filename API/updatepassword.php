@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'koneksi.php';
 $password = md5($_POST['password']);
 $cpassword = md5($_POST['cpassword']);
 $email = $_POST['username'];
