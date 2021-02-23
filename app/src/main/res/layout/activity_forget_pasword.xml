@@ -16,15 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="360dp"
             android:background="@drawable/blue_bg">
+            <ImageView
+                android:layout_width="101dp"
+                android:layout_height="112dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/logosma5" />
 
             <TextView
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="84dp"
-                android:gravity="center"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:text="LUPA PASSWORD"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
+                android:gravity="center"
+                android:text="Silakan Masukan E-mail anda untuk melakukan perubahan password"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
         </FrameLayout>
 

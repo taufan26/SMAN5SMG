@@ -43,6 +43,8 @@ public class userManagement {
     }
 
     public void logout(){
+
+
         editor.clear();
         editor.commit();
 

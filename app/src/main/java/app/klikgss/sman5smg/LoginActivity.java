@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                            JSONArray jsonArray = jsonObject.getJSONArray("data");
 
                                             if(result.equals("success")) {
-//                                                progressDialog.dismiss();
+                                                progressDialog.dismiss();
 
 //                                                for (int i = 0; i < jsonArray.length(); i++) {
 //                                                    JSONObject object = jsonArray.getJSONObject(i);

@@ -21,6 +21,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAaEa33al_p7izKV8cx47MSJYhgCpWtWF0" />
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="face" />
 
         <activity android:name=".ListSiswaActivity" />
         <activity android:name=".LoginActivity" />

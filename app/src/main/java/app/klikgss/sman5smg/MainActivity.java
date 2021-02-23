@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView showFoto;
     TextView Nama, Username;
     userManagement userManagement;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         showFoto = findViewById(R.id.fotoprofil);
         Nama = findViewById(R.id.NamaSiswa);
         Username = findViewById(R.id.UsernameSiswa);
+
+//        editor = sharedPreferences.edit();
+
 
 
 //        userManagement = new userManagement(this);
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         textViewDate.setText(currentDate);
 
         CardView cardView = findViewById(R.id.menu1); // intent cardview
-        CardView cv_logout = findViewById(R.id.logout);
+
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,15 +65,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        CardView cv_logout = findViewById(R.id.logout);
         cv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 userManagement.logout();
+
             }
         });
 
-
     }
+
 
 
 }
