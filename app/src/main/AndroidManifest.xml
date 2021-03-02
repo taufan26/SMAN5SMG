@@ -3,9 +3,14 @@
     package="app.klikgss.sman5smg">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
@@ -17,15 +22,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SMAN5SMG"
         android:networkSecurityConfig="@xml/network_security_config">
-
+        <activity android:name=".ViewPagerLogin"/>
+        <activity android:name=".MainLuringActivity" />
+        <activity android:name=".PresensiActivity" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAaEa33al_p7izKV8cx47MSJYhgCpWtWF0" />
+            android:value="AIzaSyDhxaVtE2PNt6r6uiSKTu0zunXcbZAfMYE" />
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="face" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ListSiswaActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".ForgetPasswordActivity" />
@@ -37,13 +46,17 @@
         </activity>
         <activity android:name=".UpdatePasswordActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="http"
-                    android:host="www.sman5smg.com"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.sman5smg.com"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
+        <service android:name=".FetchIntentAddressService"/>
     </application>
 
 </manifest>

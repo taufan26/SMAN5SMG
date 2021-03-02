@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundbaru"
+    tools:context=".MainLuringActivity">
+
+
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <GridLayout
+        android:id="@+id/gl_fp"
+        android:layout_width="300dp"
+        android:layout_height="373dp"
+        android:layout_marginTop="10dp"
+        android:alignmentMode="alignMargins"
+
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="1">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cv_FP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/backgroundbaru"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Silakan Tambahkan Presensi Anda" />
+
+            <TextView
+                android:id="@+id/tv_TanggalWFO"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textColor="@color/backgroundbaru"
+                android:fontFamily="@font/poppins_medium"
+                android:text="23/23/2020" />
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_JamWFO"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="@color/backgroundbaru"-->
+<!--                android:fontFamily="@font/poppins_medium"-->
+<!--                android:text="13.00:00 WIB" />-->
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/Absen_FP"
+                android:layout_marginTop="1dp"
+                android:layout_width="90dp"
+                android:layout_height="120dp"
+                android:layout_row="0"
+                android:src="@drawable/ic_baseline_fingerprint_24"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0dp" />
+            <TextView
+                android:id="@+id/txt_msg"
+                android:gravity="center"
+                android:layout_marginTop="85dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"/>
+            <Button
+                android:id="@+id/btn_absenWFO"
+                android:background="@color/backgroundbaru"
+                android:layout_marginTop="130dp"
+                android:text="Absen"
+                android:textColor="#FFFFFF"
+                android:layout_width="120dp"
+                android:drawableStart="@drawable/ic_baseline_add_circle_24"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+</RelativeLayout>
+
+</RelativeLayout>
