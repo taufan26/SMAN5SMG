@@ -1,32 +1,49 @@
 <?php
-require 'config.php';
+include 'config.php';
 
-$username = $_POST['username'];
-$password = md5($_POST['password']);
+if ($_POST) {
+	
+	//data
+	$username = $_POST['username'] ?? '';
+	$password = $_POST['password'] ?? '';
 
-$sql = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
-$result = array();
-$result['data'] = array();
+	$response = [];//data response
 
+	//cek username didalam database
+	$userQuery = $connection->prepare("SELECT * FROM login where username = ?");
+	$userQuery->execute(array($username));
+	$query = $userQuery->fetch();
 
-$responce = mysqli_query($conn,$sql);
+	if ($userQuery->rowCount() == 0) {
+		$response['status'] = false;
+		$response['message'] = "Username Tidak Terdaftar";
+	} else {
+		//ambil password di db
 
-if(mysqli_num_rows($responce) === 1) {
-	$row = mysqli_fetch_assoc($responce);
-	$ds['username'] = $row ['username'];
-	$ds['nama'] = $row['nama'];
+		$passwordDB = $query['password'];
 
+		if (strcmp(md5($password), $passwordDB) === 0) {
+			$response['status'] = true;
+			$response['message'] = "Login Berhasil";
+			$response['data'] = [
+				'id_login' => $query['id_login'],
+				'username' => $query['username'],
+				'nama' => $query['nama'],
+				'foto' => $query['foto'],
+				'id_pegawai' => $query['id_pegawai'],
+				'id_siswa' => $query['id_siswa']
+			];
+		}else{
+			$response['status'] = false;
+			$response['message'] = "Password anda salah";
+		}
+	}
 
+	//data json
+	$json = json_encode($response, JSON_PRETTY_PRINT);
 
-	array_push($result, ['data'], $ds);
-	$result['status'] = 'success';
-	echo json_encode($result);
-	mysqli_close($conn);
-}else{
-	$result['status'] = 'error';
-	echo json_encode($result);
-	mysqli_close($conn);
-
+	echo $json;
+	
 }
 
 ?>

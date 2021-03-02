@@ -1,16 +1,14 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "sman5semarang";
-
-$conn = mysqli_connect($host,$user,$pass,$db);
-	// if($conn){
-	// 	echo "Connection Estabilished";
-	// }else{
-	// 	echo "Connection error";
-	// }
-
-
+try {
+  $connection = new PDO("mysql:host=$servername;dbname=sman5semarang", $username, $password);
+  // set the PDO error mode to exception
+  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  //echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
 ?>

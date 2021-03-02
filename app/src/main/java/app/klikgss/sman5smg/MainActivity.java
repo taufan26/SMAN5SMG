@@ -20,33 +20,30 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView showFoto;
     TextView Nama, Username;
-    userManagement userManagement;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    SessionManger sessionManger;
+    String username, nama;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //session
+        sessionManger = new SessionManger(MainActivity.this);
+        if (sessionManger.isLoggedIn() == false){
+            moveToLogin();
+        }
+
         //inisialisasi
         showFoto = findViewById(R.id.fotoprofil);
         Nama = findViewById(R.id.NamaSiswa);
         Username = findViewById(R.id.UsernameSiswa);
 
-//        editor = sharedPreferences.edit();
+        username = sessionManger.getUserDetail().get(SessionManger.USERNAME);
+        nama = sessionManger.getUserDetail().get(SessionManger.NAMA);
 
-
-
-//        userManagement = new userManagement(this);
-//        userManagement.checkLogin();;
-
-//        Intent i = getIntent();
-//        String mNama = i.getStringExtra("nama");
-//        String mUsername = i.getStringExtra("username");
-//        Nama.setText(mNama);
-//        Username.setText(mUsername);
-
+        Username.setText(username);
+        Nama.setText(nama);
 
         // show calendar
         Calendar calendar = Calendar.getInstance();
@@ -69,14 +66,18 @@ public class MainActivity extends AppCompatActivity {
         cv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                userManagement.logout();
-
+                sessionManger.logoutSession();
+                moveToLogin();
             }
         });
-
     }
 
+    private void moveToLogin() {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        finish();
+    }
 
 
 }
