@@ -29,7 +29,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Silakan Masukan E-mail anda untuk melakukan perubahan password"
+                android:text="Silakan Masukan E-mail Terdaftar untuk melakukan perubahan password"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

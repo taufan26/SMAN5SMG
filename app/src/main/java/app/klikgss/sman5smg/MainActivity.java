@@ -56,12 +56,22 @@ public class MainActivity extends AppCompatActivity {
         textViewDate.setText(currentDate);
 
         CardView cardView = findViewById(R.id.menu1); // intent cardview
+        CardView cv_luring = findViewById(R.id.menu2);
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ListSiswaActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PresensiActivity.class);
                 startActivity(intent);
+            }
+        });
+
+
+        cv_luring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainLuringActivity.class);
+                startActivity(i);
             }
         });
 

@@ -2,6 +2,7 @@ package app.klikgss.sman5smg;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +10,11 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,42 +32,55 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity  {
     private CheckBox ShowPass;
+    private Spinner sp;
+    private int status = 0;
     EditText  usernameLogin, passwordLogin;
     EditText usernameRegister, passwordRegister, namaRegister;
     TextView cv_Login, textViewlupapassword,tv_register;
-    ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
+
+    Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        mContext = this;
+        progressDialog = new ProgressDialog(mContext);
 
         // inisialisasi login
         usernameLogin = findViewById(R.id.loginusername);
         passwordLogin= findViewById(R.id.loginpass);
         cv_Login = findViewById(R.id.login_btn);
-
-
         //inisialisasi register
-        usernameRegister = findViewById(R.id.Inptusername);
-        passwordRegister = findViewById(R.id.Inptpassword);
-        namaRegister = findViewById(R.id.InptNama);
+//        usernameRegister = findViewById(R.id.Inptusername);
+//        passwordRegister = findViewById(R.id.Inptpassword);
+//        namaRegister = findViewById(R.id.InptNama);
         //tv_register = findViewById(R.id.register_btn);
-
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("loading....");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-
         //lupa password
         textViewlupapassword = findViewById(R.id.loginforget);
         ShowPass = findViewById(R.id.showPass);
+
+//        List<String> listSpinner = new ArrayList<>();
+//        listSpinner.add(0,"--Pilih--");
+//        listSpinner.add(1, "Luring");
+//        listSpinner.add(2, "Daring");
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext,android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        sp.setAdapter(adapter);
 
         ShowPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
 //        tv_register.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -249,4 +268,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
+//    @Override
+//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//    }
 }

@@ -57,7 +57,7 @@
             android:rowCount="1">
             <androidx.cardview.widget.CardView
 
-                android:id="@+id/profil1"
+                android:id="@+id/cv_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -159,7 +159,7 @@
                         android:textColor="#000"
                         android:textSize="15sp"
                         android:layout_marginTop="5dp"
-                        android:text="Menu1"/>
+                        android:text="Presensi"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -193,7 +193,7 @@
                         android:textColor="#000"
                         android:textSize="15sp"
                         android:layout_marginTop="5dp"
-                        android:text="menu2"/>
+                        android:text="Presensii"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -239,7 +239,7 @@
                         android:textColor="#000"
                         android:textSize="15sp"
                         android:layout_marginTop="5dp"
-                        android:text="menu3"/>
+                        android:text=""/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

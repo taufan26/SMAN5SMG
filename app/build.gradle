@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id "com.google.secrets_gradle_plugin" version "0.5"
+
 }
 
 android {
@@ -14,6 +16,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // ...
+        // Set the properties within `local.properties` into a `Properties` class so that values
+        // within `local.properties` (e.g. Maps API key) are accessible in this file.
+        Properties properties = new Properties()
+        if (rootProject.file("local.properties").exists()) {
+            properties.load(rootProject.file("local.properties").newDataInputStream())
+        }
+
+        // Inject the Maps API key into the manifest
+        manifestPlaceholders = [ mapsApiKey : properties.getProperty("MAPS_API_KEY", "AIzaSyDhxaVtE2PNt6r6uiSKTu0zunXcbZAfMYE") ]
+
     }
 
     buildTypes {
@@ -38,6 +52,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
 
         //tambahan
+    implementation "androidx.biometric:biometric:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.google.android.material:material:1.3.0'
@@ -46,6 +61,8 @@ dependencies {
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.4'
     implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
     implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.github.tommykw:TagView:0.0.1'
+
 
 
     //Retrofit
@@ -60,5 +77,18 @@ dependencies {
 
     // don't require this additional model):
     implementation 'com.google.firebase:firebase-ml-vision-face-model:20.0.1'
+
+    //ViewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+
+
+    //RoundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.3'
+
+
 
 }
