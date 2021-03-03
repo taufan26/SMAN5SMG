@@ -5,15 +5,21 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.text.DateFormat;
 import java.time.Clock;
 import java.util.Calendar;
+
+import retrofit2.http.Url;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView showFoto;
     TextView Nama, Username;
     SessionManger sessionManger;
-    String username, nama;
+    String username, nama, foto;
 
 
     @Override
@@ -41,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
         username = sessionManger.getUserDetail().get(SessionManger.USERNAME);
         nama = sessionManger.getUserDetail().get(SessionManger.NAMA);
+        foto = sessionManger.getUserDetail().get(SessionManger.FOTO);
 
         Username.setText(username);
         Nama.setText(nama);
+        Picasso.get().load(Urls.image_url+foto).into(showFoto);
 
         // show calendar
         Calendar calendar = Calendar.getInstance();
